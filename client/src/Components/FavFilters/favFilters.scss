@@ -1,0 +1,68 @@
+.favFilters {
+    max-width: 410px;
+    max-height: 599px;
+    background: #ffffff;
+    box-shadow: 0px 4px 33px rgba(0, 0, 0, 0.04);
+    border-radius: 16px;
+    margin-bottom: 24px;
+    &-wrapper {
+        padding: 32px;
+        h2 {
+            font-family: var(--r-medium);
+            font-weight: 500;
+            font-size: 24px;
+            margin-bottom: 32px;
+        }
+    }
+}
+.tabs {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 36px;
+    &-item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 4px 12px;
+        background: #ffffff;
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+        color: #99a0a3;
+        font-size: 14px;
+        cursor: pointer;
+        transition: border 0.3s ease-in-out;
+        &__toggle {
+            display: flex;
+            flex-direction: column;
+            margin-left: 9px;
+        }
+        &--active {
+            border: 1px solid #41522e;
+            color: #41522e;
+        }
+        svg {
+            path {
+                transition: all 0.3s ease-in-out;
+            }
+        }
+    }
+    &-item + &-item {
+        margin-left: 8px;
+    }
+}
+.favHotels {
+    height: 395px;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        height: 6px;
+        width: 4px;
+        background-color: #41522e;
+    }
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #41522e;
+    }
+}

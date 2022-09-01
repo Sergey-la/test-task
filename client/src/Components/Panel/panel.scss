@@ -1,0 +1,193 @@
+.panel {
+    max-width: 700px;
+    max-height: 1009px;
+    background: #ffffff;
+    box-shadow: 0px 4px 33px rgba(0, 0, 0, 0.04);
+    border-radius: 16px;
+    margin-left: 24px;
+    &-wrapper {
+        padding: 48px 32px 52px 32px;
+    }
+    &-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 28px;
+        @media screen and (max-width: 821px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        &__city {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--r-medium);
+            font-size: 32px;
+            cursor: default;
+            width: 245px;
+            @media screen and (max-width: 971px) {
+                width: 200px;
+                font-size: 26px;
+                svg {
+                    height: 15px;
+                }
+            }
+            @media screen and (max-width: 821px) {
+                width: 205px;
+            }
+        }
+        &__date {
+            font-size: 24px;
+            color: #41522e;
+            cursor: default;
+            @media screen and (max-width: 970px) {
+                font-size: 20px;
+            }
+        }
+    }
+    @media screen and (max-width: 561px) {
+        margin: 0;
+    }
+}
+.slider {
+    cursor: pointer;
+    margin-bottom: 28px;
+}
+.fav-hotel-status {
+    font-family: var(--r-light);
+    font-size: 17px;
+    cursor: default;
+    margin-bottom: 39px;
+    span {
+        font-family: var(--r-medium);
+        color: #41522e;
+    }
+}
+.hotel-list {
+    height: 620px;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        height: 6px;
+        width: 4px;
+        background-color: #41522e;
+    }
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #41522e;
+    }
+}
+.hotel-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 125px;
+    border-bottom: 1px solid rgba(135, 135, 135, 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    &--small {
+        margin-bottom: 10px;
+        height: 165px;
+    }
+    &--small .hotel-info {
+        h2 {
+            width: 140px;
+        }
+        &__rate {
+            padding-bottom: 8px;
+        }
+    }
+    &--small .hotel-info__date {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        &-separator {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 851px) {
+        flex-direction: column;
+        align-items: center;
+        height: 245px;
+        &--small {
+            height: 265px;
+        }
+    }
+}
+.img {
+    padding: 12px;
+    background: rgba(65, 82, 46, 0.1);
+    border-radius: 50%;
+    margin: 15px 0;
+    margin-right: 24px;
+}
+.hotel-info {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    h2 {
+        font-family: var(--r-light);
+        font-size: 17px;
+        font-weight: 300;
+        margin-bottom: 10px;
+    }
+    &__date {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: #878787;
+        font-size: 14px;
+        margin-bottom: 5px;
+        span {
+            width: 120px;
+        }
+        &-separator {
+            width: 9px;
+            height: 1px;
+            background: #c4c4c4;
+            border-radius: 2px;
+            margin-right: 10px;
+        }
+    }
+    @media screen and (max-width: 851px) {
+        margin: 0;
+        margin-bottom: 16px;
+        align-items: center;
+    }
+}
+.hotel-price {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+    svg {
+        margin-left: auto;
+        margin-bottom: 22px;
+    }
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        height: 20px;
+        font-family: var(--r-light);
+        font-size: 11px;
+        color: #878787;
+
+        span {
+            font-family: var(--r-regular);
+            font-size: 17px;
+            line-height: 18px;
+            color: var(--main);
+            min-width: 80px;
+            text-align: end;
+        }
+    }
+    @media screen and (max-width: 851px) {
+        flex-direction: row-reverse;
+        svg {
+            margin-left: 45px;
+            margin-bottom: 0;
+        }
+    }
+}
