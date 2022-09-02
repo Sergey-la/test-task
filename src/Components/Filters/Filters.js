@@ -38,7 +38,7 @@ function Filters({ filters }) {
                     ],
                 });
                 const req = await fetch(
-                    `http://engine.hotellook.com/api/v2/cache.json?location=${data.location}&currency=rub&checkIn=${date.year}-${date.setFormatMonth}-${date.setFormatDay}&checkOut=${date.year}-${date.setFormatOutMonth}-${date.setFormatOutDay}&adults=${data.countDay}&limit=10`
+                    `https://engine.hotellook.com/api/v2/cache.json?location=${data.location}&currency=rub&checkIn=${date.year}-${date.setFormatMonth}-${date.setFormatDay}&checkOut=${date.year}-${date.setFormatOutMonth}-${date.setFormatOutDay}&adults=${data.countDay}&limit=10`
                 );
                 const hotelsData = await req.json();
                 setSubmitLoaded(false);
