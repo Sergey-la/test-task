@@ -57,7 +57,7 @@ export default function Panel({ hotels, favHotels, filters }) {
                     {hotels.hotels.length > 0 ? (
                         <React.Fragment>
                             {hotels.hotels.map((hotel, i) => {
-                                let fav = undefined;
+                                let fav = false;
                                 if (favHotels.length) {
                                     fav = favHotels.find(
                                         (favHotel) =>
@@ -69,11 +69,8 @@ export default function Panel({ hotels, favHotels, filters }) {
                                         hotel={hotel}
                                         date={[formatDay, monthString, year]}
                                         countDay={filters[3].countDay}
-                                        isFav={fav !== undefined ? true : false}
-                                        key={
-                                            hotel.hotelId +
-                                            new Date().getTime() /*!!! */
-                                        }
+                                        isFav={fav}
+                                        key={hotel.hotelId}
                                     />
                                 );
                             })}
