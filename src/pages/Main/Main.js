@@ -21,7 +21,7 @@ function Main() {
         dispatch({ type: 'LOAD_FAV_HOTELS' });
     }, [dispatch]);
 
-    if (auth === 'false') {
+    if (auth === 'false' || !auth) {
         return <Navigate to="/login" />;
     }
 
