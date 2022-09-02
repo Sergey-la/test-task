@@ -39,7 +39,12 @@ export default function Panel({ hotels, favHotels, filters }) {
                                 strokeLinejoin="round"
                             />
                         </svg>
-                        <span>{filters[0]?.location}</span>
+                        <span
+                            className="panel-top__city-location"
+                            title={filters[0]?.location}
+                        >
+                            {filters[0]?.location}
+                        </span>
                     </div>
                     <div className="panel-top__date">{`${formatDay} ${monthString} ${year}`}</div>
                 </div>
@@ -48,7 +53,7 @@ export default function Panel({ hotels, favHotels, filters }) {
                     Добавлено в Избранное: <span>{favHotels.length}</span>{' '}
                     {enumerate(favHotels.length, ['отель', 'отеля', 'отелей'])}
                 </div>
-                <div className="hotel-list">
+                <ul className="hotel-list">
                     {hotels.hotels.length > 0 ? (
                         <React.Fragment>
                             {hotels.hotels.map((hotel, i) => {
@@ -66,14 +71,15 @@ export default function Panel({ hotels, favHotels, filters }) {
                                         countDay={filters[3].countDay}
                                         isFav={fav !== undefined ? true : false}
                                         key={
-                                            hotel.hotelId + new Date().getTime()
+                                            hotel.hotelId +
+                                            new Date().getTime() /*!!! */
                                         }
                                     />
                                 );
                             })}
                         </React.Fragment>
                     ) : null}
-                </div>
+                </ul>
             </div>
         </div>
     );

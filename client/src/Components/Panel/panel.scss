@@ -35,6 +35,12 @@
             @media screen and (max-width: 821px) {
                 width: 205px;
             }
+            &-location {
+                width: 130px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
         }
         &__date {
             font-size: 24px;

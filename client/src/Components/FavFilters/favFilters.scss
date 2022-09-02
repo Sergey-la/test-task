@@ -1,5 +1,5 @@
 .favFilters {
-    max-width: 410px;
+    width: 410px;
     max-height: 599px;
     background: #ffffff;
     box-shadow: 0px 4px 33px rgba(0, 0, 0, 0.04);
@@ -13,6 +13,10 @@
             font-size: 24px;
             margin-bottom: 32px;
         }
+    }
+    @media screen and (max-width: 761px) {
+        width: 100%;
+        max-width: 410px;
     }
 }
 .tabs {

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import { useDispatch } from 'react-redux';
 import './favFilters.scss';
 
-export default function Tabs({ favHotels }) {
+function Tabs({ favHotels }) {
     const [activeRate, setActiveRate] = useState(true);
     const [activePrice, setActivePrice] = useState(false);
     const [activeToggleRate, setActiveToggleRate] = useState('up');
@@ -157,3 +157,5 @@ export default function Tabs({ favHotels }) {
         </div>
     );
 }
+
+export default memo(Tabs);

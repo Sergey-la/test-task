@@ -1,16 +1,14 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css/bundle';
+import 'swiper/swiper.min.css';
 
-export default function Slider() {
+function Slider() {
     const hotels = useSelector((store) => store.images);
 
     return (
         <div className="slider">
-            <Swiper
-                slidesPerView={4}//брейкпоинты убрал, всё оставил как есть, в изначальном виде.
-            >
+            <Swiper slidesPerView={3}>
                 <SwiperSlide>
                     <img src={hotels.images[0]} alt="классная картинка" />
                 </SwiperSlide>
@@ -33,3 +31,4 @@ export default function Slider() {
         </div>
     );
 }
+export default memo(Slider);

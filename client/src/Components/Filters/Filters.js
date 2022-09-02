@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import DatePicker from 'react-datepicker';
@@ -44,6 +44,7 @@ function Filters({ filters }) {
                 setSubmitLoaded(false);
                 dispatch({ type: 'UPDATE_HOTELS', payload: hotelsData });
             }
+            setSubmitLoaded(false);
         }, 500);
     };
 
@@ -68,14 +69,12 @@ function Filters({ filters }) {
                     <label style={{ fontFamily: 'roboto-medium' }}>
                         Дата заселения
                         <DatePicker
-                        selected={startDate}
-                        onChange={(date) => setStartDate(date)}
-                        dateFormat="dd.MM.yyyy"
-                        endDate={endDate}
-                    />
+                            selected={startDate}
+                            onChange={(date) => setStartDate(date)}
+                            dateFormat="dd.MM.yyyy"
+                            endDate={endDate}
+                        />
                     </label>
-
-
                 </div>
                 <div className="input" style={{ marginBottom: '32px' }}>
                     <label style={{ fontFamily: 'roboto-medium' }}>
@@ -95,4 +94,4 @@ function Filters({ filters }) {
     );
 }
 
-export default Filters;
+export default memo(Filters);

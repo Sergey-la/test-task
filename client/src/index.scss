@@ -87,6 +87,36 @@ body {
         }
     }
 }
+
+.swiper-container {
+    width: 636px;
+}
+
+@media screen and (max-width: 968px) {
+    .swiper-container {
+        max-width: 580px;
+    }
+}
+@media screen and (max-width: 776px) {
+    .swiper-container {
+        max-width: 504px;
+    }
+}
+@media screen and (max-width: 561px) {
+    .swiper-container {
+        max-width: 390px;
+    }
+}
+@media screen and (max-width: 466px) {
+    .swiper-container {
+        max-width: 290px;
+    }
+}
+@media screen and (max-width: 366px) {
+    .swiper-container {
+        max-width: 240px;
+    }
+}
 .swiper-slide {
     width: 176px !important;
 }

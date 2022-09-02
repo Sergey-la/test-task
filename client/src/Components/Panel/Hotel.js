@@ -5,13 +5,7 @@ import Rate from './Rate';
 import img from '../../assets/icons/hotel.svg';
 import Fav from '../../Components/Svg/Fav';
 
-export default function Hotel({
-    hotel,
-    date,
-    countDay,
-    isFav,
-    className = 'hotel-wrapper',
-}) {
+function Hotel({ hotel, date, countDay, isFav, className = 'hotel-wrapper' }) {
     const dispatch = useDispatch();
 
     const onClick = () => {
@@ -39,7 +33,7 @@ export default function Hotel({
         }
     }
     return (
-        <div className={className}>
+        <li className={className}>
             <div className="img">
                 <img src={img} alt="фото отеля" width={35} height={30} />
             </div>
@@ -60,6 +54,7 @@ export default function Hotel({
                     Price: <span>{numberWithSpaces()} ₽</span>
                 </div>
             </div>
-        </div>
+        </li>
     );
 }
+export default Hotel;

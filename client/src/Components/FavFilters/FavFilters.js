@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Tabs from './Tabs';
 import Hotel from '../Panel/Hotel';
 import getMonthString from '../../hooks/getMonthString';
 import './favFilters.scss';
 
-export default function FavFilters({ favHotels, filters }) {
+function FavFilters({ favHotels, filters }) {
     const year = new Date().getFullYear();
     const day = new Date(`${filters[1]?.checkIn}`).getDate();
     const formatDay = day < 10 ? `0${day}` : `${day}`;
@@ -47,3 +47,4 @@ export default function FavFilters({ favHotels, filters }) {
         </div>
     );
 }
+export default memo(FavFilters);
