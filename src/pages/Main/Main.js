@@ -27,6 +27,7 @@ function Main() {
 
     const logout = () => {
         localStorage.setItem('auth', false);
+        dispatch({ type: 'DELETE_HOTELS' });
         return navigate('/login');
     };
 

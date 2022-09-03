@@ -16,6 +16,12 @@ export default function hotels(state = initial, action) {
                 hotels: [...action.payload],
             };
         }
+        case 'DELETE_HOTELS': {
+            return {
+                ...state,
+                hotels: [],
+            };
+        }
         default:
             return state;
     }

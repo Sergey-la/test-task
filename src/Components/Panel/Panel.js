@@ -70,7 +70,7 @@ export default function Panel({ hotels, favHotels, filters }) {
                                         date={[formatDay, monthString, year]}
                                         countDay={filters[3].countDay}
                                         isFav={fav}
-                                        key={hotel.hotelId + i}
+                                        key={hotel.hotelId}
                                     />
                                 );
                             })}
