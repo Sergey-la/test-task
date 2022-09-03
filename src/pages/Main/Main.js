@@ -16,9 +16,11 @@ function Main() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch({ type: 'LOAD_HOTELS' });
-        dispatch({ type: 'LOAD_FILTERS' });
-        dispatch({ type: 'LOAD_FAV_HOTELS' });
+        if (auth && auth !== 'false') {
+            dispatch({ type: 'LOAD_HOTELS' });
+            dispatch({ type: 'LOAD_FILTERS' });
+            dispatch({ type: 'LOAD_FAV_HOTELS' });
+        }
     }, [dispatch]);
 
     if (auth === 'false' || !auth) {
