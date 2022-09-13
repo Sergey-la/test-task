@@ -60,7 +60,7 @@ function Login() {
                             >
                                 Пароль
                                 <input
-                                    type="text"
+                                    type="password"
                                     required={true}
                                     {...register('password')}
                                     onInput={changeInputValue}
