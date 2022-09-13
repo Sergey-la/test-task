@@ -31,6 +31,10 @@ function Login() {
         }, 500);
     };
 
+    const changeInputValue = ({ target }) => {
+        target.value = target.value.replace(/ /g, '');
+    };
+
     return (
         <section className="login">
             <div className="login-form-overlay">
@@ -56,9 +60,10 @@ function Login() {
                             >
                                 Пароль
                                 <input
-                                    type="password"
+                                    type="text"
                                     required={true}
                                     {...register('password')}
+                                    onInput={changeInputValue}
                                 />
                             </label>
                             {errorPas && (
